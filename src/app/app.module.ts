@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialDesignModule } from './helper-modules/material-design.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './http/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -15,9 +17,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NoopAnimationsModule,
     MaterialDesignModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
