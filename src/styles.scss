@@ -12,7 +12,7 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$Angular-SkiCams-primary: mat-palette($mat-indigo);
+$Angular-SkiCams-primary: mat-palette($mat-teal);
 $Angular-SkiCams-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -32,3 +32,43 @@ $Angular-SkiCams-theme: mat-light-theme($Angular-SkiCams-primary, $Angular-SkiCa
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.navbar {
+  border-bottom: #dbdbdb 1px solid;
+  opacity: 0.95;
+  padding: 0;
+}
+
+#navbarNav a {
+  padding: 0 0 4px 0;
+  margin-right: 40px;
+  color: #545454;
+  border-bottom: white 2px solid;
+  font-weight: normal;
+}
+
+#navbarNav .active-link {
+  color: #00bf80;
+  border-bottom: #00bf80 2px solid;
+}
+
+main {
+  min-height: 600px;
+}
+
+footer {
+  background-color: #363b3f;
+  box-shadow: 0 -5px 5px -5px #333;
+  border-top: 1px solid #f88a00;
+  -webkit-box-shadow: 0px -2px 6px 0px rgba(210,210,210,1);
+  -moz-box-shadow: 0px -2px 6px 0px rgba(210,210,210,1);
+  box-shadow: 0px -2px 6px 0px rgba(210,210,210,1);
+}
+
+footer span {
+  border-top: 1px solid #25282b;
+  color: #999c9f;
+  width: 18rem;
+  text-align: center;
+
+}
