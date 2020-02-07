@@ -1,0 +1,40 @@
+<section  >
+  <div class="container ">
+    <div class="row align-items-center">
+      <div class="mt-3 mx-auto  bg-white shadow-sm " >
+        <section class="login-form clearfix">
+          <form [formGroup]="oContactForm" (ngSubmit)="onSubmit()" >
+            <div class="form-group">
+              <mat-form-field>
+                <input autocomplet="name" matInput name="name"  formControlName="name">
+                <mat-label>Name <span class="text-danger">*</span></mat-label>
+                <mat-error *ngIf="oContactForm.controls.name.errors">
+                  <mat-error *ngIf="oContactForm.controls.name.errors.required">required</mat-error>
+                  <mat-error *ngIf="oContactForm.controls.name.errors.minlength">Need 3 characters</mat-error>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <mat-form-field >
+                <input autocomplet="email" matInput name="email" type="email" formControlName="email">
+                <mat-label>Email <span class="text-danger">*</span></mat-label>
+                <mat-error *ngIf="oContactForm.controls.email.errors">
+                  <mat-error *ngIf="oContactForm.controls.email.errors.required">required</mat-error>
+                  <mat-error *ngIf="oContactForm.controls.email.errors.email">wrong email</mat-error>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field >
+                  <input matInput name="message" type="text" formControlName="message">
+                  <mat-label>Message</mat-label>
+                </mat-form-field>
+              </div>
+
+            <button class="float-right"   mat-raised-button color="primary" type="submit" [disabled]="oContactForm.invalid" >Login</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>

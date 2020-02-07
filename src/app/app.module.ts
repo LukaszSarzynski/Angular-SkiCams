@@ -7,10 +7,17 @@ import { MaterialDesignModule } from './helper-modules/material-design.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './http/auth-interceptor';
+import { PageRoutingModule } from './helper-modules/page-routing.module';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { SkicamsComponent } from './pages/skicams/skicams.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AboutUsComponent,
+    SkicamsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +25,8 @@ import { AuthInterceptor } from './http/auth-interceptor';
     MaterialDesignModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PageRoutingModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

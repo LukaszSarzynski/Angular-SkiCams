@@ -1,19 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  oContactForm: FormGroup;
+export class AppComponent  {
 
-  constructor() { }
-
-  ngOnInit() {
-    this.oContactForm = new FormGroup({
-      message: new FormControl('', ),
-    });
-  }
 }

@@ -1,11 +1,38 @@
-<form [formGroup]="oContactForm">
-  <div class="form-group">
-    <mat-form-field>
-      <input matInput [value]="'Material UI works'" name="message" type="text" formControlName="message">
-      <mat-label>Message</mat-label>
-    </mat-form-field>
+<nav class="navbar navbar-light navbar-expand bg-white f33ixed-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-12  my-sm-4 my-0">
+        <a href="#" class="navbar-brand">
+          <img src="assets/img/skicams-logo.png" alt="SkiCams logo">
+        </a>
+      </div>
+      <div class=" col-12">
+        <div class=" justify-content-start text-uppercase" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a routerLink="about" routerLinkActive="active-link" class="nav-link" href="#home">About&nbsp;us</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="skicams" routerLinkActive="active-link" class="nav-link"  href="#history">Skicams</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="contact" routerLinkActive="active-link" class="nav-link"  href="#discribution">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <button type="button" class="btn btn-warning">Bootstrap works</button>
-
-</form>
+</nav>
+<main class="bg-light pt-5 pb-4">
+  <router-outlet></router-outlet>
+</main>
+<footer class="py-3">
+  <div class="container">
+    <div class="row">
+      <span class="mx-auto py-3 my-4">
+        SCSS Bootsrap + Angular Material UI. Powered on Angular8
+      </span>
+    </div>
+  </div>
+</footer>

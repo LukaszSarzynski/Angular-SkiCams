@@ -1,0 +1,42 @@
+
+<section>
+  <div class="container">
+    <div *ngIf="sApiError; then apiError else apiWork"></div>
+    <ng-template #apiError>
+      <div class="row align-items-center">
+        <div class="mt-3 col-4 mx-auto  bg-white  shadow-sm  p-5">
+          <h3 >Cameras not available</h3>
+          <p class="text-danger"> Please check for few moments or contact with us via contact form.
+            </p>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #apiWork>
+      <div class="row ">
+        <div *ngFor="let oResort of aResortDatas; index as i" class="col-md-6 mt-3">
+          <div class="card shadow-sm rounded">
+            <div class="card-body">
+              <p class="small text-muted text-right">{{ dTodayDate | date:'dd-MM-yyyy'}}</p>
+              <h5 class="text-dark font-weight-normal	 h4 card-title text-center">{{ oResort.name }}</h5>
+
+              <p class="card-text">
+                <!-- {s{oResort.cams | json }} -->
+
+                <ng-container *ngFor="let oCamera of oResort.cams | keyvalue ; index as iCount">
+                  <ng-container *ngIf="iCount < iMaxCamsToShow">
+
+                    <img src="{{oCamera.value.url}}" class="img-fluid" alt="{{oCamera.value.name}}">
+                  </ng-container>
+
+                </ng-container>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </ng-template>
+
+
+  </div>
+</section>

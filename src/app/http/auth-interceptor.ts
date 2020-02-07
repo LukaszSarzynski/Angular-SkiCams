@@ -5,7 +5,7 @@ import { HttpInterceptor, HttpRequest, HttpHandler } from '@angular/common/http'
 export class AuthInterceptor implements HttpInterceptor {
 
   private sApiKeyName = 'X-Mashape-Key';
-  private sApiKeyValue = '0b8c31dd3a4c1e74b0764d5b510fd5eaac00426c';
+  private sApiKeyValue = '8784b47d1dmshd2b1f3365c3f811p129e67jsn80e7fd89998a';
 
   constructor() {}
 
